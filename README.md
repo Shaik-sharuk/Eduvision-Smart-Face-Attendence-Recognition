@@ -79,36 +79,6 @@ All the key stats in one place!
 
 ---
 
-## 💻 How to Run This Project
-
-1. **Clone this repo**:
-```bash
-git clone https://github.com/your-username/eduvision-face-attendance.git
-cd eduvision-face-attendance
-
-
-📂 Project Structure (Simplified)
-
-EduVision/
-├── app.py                # Main app
-├── register_face.py      # Student registration logic
-├── take_attendance.py    # Face recognition script
-├── static/               # CSS, JS
-├── templates/            # HTML pages
-├── dataset/              # Stored face images
-├── encodings/            # Stored face encodings
-└── requirements.txt
-
-
-
-🧠 Notes
-The system works best with clear and bright lighting.
-
-Make sure the student’s photo is front-facing and not blurry during registration.
-
-Attendance will only be marked if the face is recognized and already registered.
-
-
 
 👨‍💻 Developed By
 Shaik Sharu
