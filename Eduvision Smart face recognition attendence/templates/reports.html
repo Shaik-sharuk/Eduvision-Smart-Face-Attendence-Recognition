@@ -1,0 +1,187 @@
+{% extends "base.html" %}
+
+{% block title %}Reports{% endblock %}
+{% block page_title %}Attendance Reports{% endblock %}
+
+{% block content %}
+<div class="row">
+    <!-- Daily Attendance Report -->
+    <div class="col-md-6">
+        <div class="card mb-4">
+            <div class="card-header bg-white">
+                <h5 class="card-title mb-0">Daily Attendance (Last 30 Days)</h5>
+            </div>
+            <div class="card-body">
+                <canvas id="dailyChart" height="250"></canvas>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Class Attendance -->
+    <div class="col-md-6">
+        <div class="card mb-4">
+            <div class="card-header bg-white">
+                <h5 class="card-title mb-0">Class Attendance Distribution</h5>
+            </div>
+            <div class="card-body">
+                <canvas id="classChart" height="250"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Student Attendance Report -->
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                <h5 class="card-title mb-0">Student Attendance Records</h5>
+                <button class="btn btn-sm btn-outline-primary" id="export-csv">
+                    <i class="bi bi-download me-1"></i> Export CSV
+                </button>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Student ID</th>
+                                <th>Name</th>
+                                <th>Total Attendance</th>
+                                <th>Attendance Rate</th>
+                                <th>Last Attendance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for student in student_data %}
+                            <tr>
+                                <td>{{ student.student_id }}</td>
+                                <td>{{ student.name }}</td>
+                                <td>{{ student.attendance_count }}</td>
+                                <td>
+                                    <div class="progress" style="height: 20px;">
+                                        {% set percentage = (student.attendance_count / 30) * 100 %}
+                                        <div class="progress-bar" 
+                                            role="progressbar" 
+                                            style="width: {{ percentage }}%;"
+                                            aria-valuenow="{{ percentage }}" 
+                                            aria-valuemin="0" 
+                                            aria-valuemax="100">
+                                            {{ percentage|round(1) }}%
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    {% if student.last_attendance %}
+                                        {{ student.last_attendance.strftime('%Y-%m-%d') }}
+                                    {% else %}
+                                        Never
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block extra_js %}
+<script>
+    // Daily Attendance Chart
+    const dailyCtx = document.getElementById('dailyChart').getContext('2d');
+    const dailyData = [
+        {% for day in daily_data %}
+        { date: "{{ day.date }}", count: {{ day.count }} },
+        {% endfor %}
+    ];
+    
+    const dailyChart = new Chart(dailyCtx, {
+        type: 'bar',
+        data: {
+            labels: dailyData.map(d => d.date),
+            datasets: [{
+                label: 'Attendance Count',
+                data: dailyData.map(d => d.count),
+                backgroundColor: '#3498db',
+                borderColor: '#2980b9',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Students'
+                    }
+                },
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Date'
+                    }
+                }
+            }
+        }
+    });
+    
+    // Class Attendance Chart
+    const classCtx = document.getElementById('classChart').getContext('2d');
+    const classData = [
+        {% for class in class_data %}
+        { className: "{{ class.class_name }}", count: {{ class.count }} },
+        {% endfor %}
+    ];
+    
+    const classChart = new Chart(classCtx, {
+        type: 'doughnut',
+        data: {
+            labels: classData.map(c => c.className),
+            datasets: [{
+                label: 'Attendance Count',
+                data: classData.map(c => c.count),
+                backgroundColor: [
+                    '#3498db', '#2ecc71', '#9b59b6', '#e74c3c', '#f39c12'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'right'
+                }
+            }
+        }
+    });
+    
+    // Export CSV
+    document.getElementById('export-csv').addEventListener('click', async () => {
+        try {
+            const response = await fetch('/export-csv');
+            if (response.ok) {
+                const blob = await response.blob();
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'attendance_report.csv';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+            } else {
+                alert('Failed to generate CSV report');
+            }
+        } catch (error) {
+            console.error('Export error:', error);
+            alert('Error generating report');
+        }
+    });
+</script>
+{% endblock %}
+{% endblock %}
