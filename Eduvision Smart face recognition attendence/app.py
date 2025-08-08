@@ -3,10 +3,11 @@ import os
 import datetime
 import numpy as np
 import face_recognition
-import mysql.connector
+from pymongo import MongoClient, ASCENDING
 from flask import Flask, flash, make_response, render_template, request, jsonify, redirect, url_for, session, send_from_directory
 import logging
 from logging.handlers import RotatingFileHandler
+from bson.binary import Binary
 
 # Configure logging
 log_formatter = logging.Formatter('%(asctime)s %(levelname)s: %(message)s [in %(pathname)s:%(lineno)d]')
@@ -30,83 +31,50 @@ app.secret_key = 'eduvision_secret_123'
 app.config['UPLOAD_FOLDER'] = 'static/uploads'
 app.config['SESSION_COOKIE_NAME'] = 'eduvision_session'
 
-# MySQL Configuration
-db_config = {
-    'host': 'localhost',
-    'user': 'eduvision_user',
-    'password': 'SecurePass123!',
-    'database': 'eduvision_db',
-    'auth_plugin': 'mysql_native_password'
-}
+# MongoDB Configuration
+MONGO_URI = "mongodb://localhost:27017/"
+DB_NAME = "eduvision_db"
 
-# Initialize database connection
-def get_db_connection():
+# Initialize MongoDB connection
+def get_db():
     try:
-        conn = mysql.connector.connect(**db_config)
-        return conn
-    except mysql.connector.Error as err:
+        client = MongoClient(MONGO_URI)
+        db = client[DB_NAME]
+        # Test connection
+        db.command('ping')
+        return db
+    except Exception as err:
         app.logger.error(f"Database connection error: {err}")
         flash(f"Database error: {err}", 'danger')
         return None
 
-# Create tables if not exists
+# Create collections if not exists
 def init_db():
-    conn = get_db_connection()
-    if conn:
-        cursor = conn.cursor()
+    db = get_db()
+    if db is None:
+        app.logger.error("Database connection failed during initialization")
+        return
         
-        try:
-            # Create students table
-            cursor.execute('''
-                CREATE TABLE IF NOT EXISTS students (
-                    id INT AUTO_INCREMENT PRIMARY KEY,
-                    student_id VARCHAR(20) UNIQUE NOT NULL,
-                    name VARCHAR(100) NOT NULL,
-                    face_encoding BLOB,
-                    registered_on DATETIME DEFAULT CURRENT_TIMESTAMP
-                )
-            ''')
-            
-            # Create attendance table
-            cursor.execute('''
-                CREATE TABLE IF NOT EXISTS attendance (
-                    id INT AUTO_INCREMENT PRIMARY KEY,
-                    student_id VARCHAR(20) NOT NULL,
-                    timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
-                    class_name VARCHAR(50),
-                    confidence FLOAT,
-                    FOREIGN KEY (student_id) REFERENCES students(student_id)
-                )
-            ''')
-            
-            # Create users table
-            cursor.execute('''
-                CREATE TABLE IF NOT EXISTS users (
-                    id INT AUTO_INCREMENT PRIMARY KEY,
-                    username VARCHAR(50) UNIQUE NOT NULL,
-                    password VARCHAR(100) NOT NULL,
-                    role ENUM('admin', 'teacher') NOT NULL
-                )
-            ''')
-            
-            # Create default admin user if not exists
-            cursor.execute("SELECT * FROM users WHERE username = 'admin'")
-            if not cursor.fetchone():
-                cursor.execute('''
-                    INSERT INTO users (username, password, role) 
-                    VALUES ('admin', 'admin123', 'admin')
-                ''')
-                app.logger.info("Created default admin user")
-            
-            conn.commit()
-            app.logger.info("Database tables created successfully")
-            
-        except mysql.connector.Error as err:
-            app.logger.error(f"Error creating tables: {err}")
-            conn.rollback()
-        finally:
-            cursor.close()
-            conn.close()
+    # Create collections
+    collections = ['students', 'attendance', 'users']
+    for col in collections:
+        if col not in db.list_collection_names():
+            db.create_collection(col)
+            app.logger.info(f"Created collection: {col}")
+    
+    # Create indexes
+    db.students.create_index([("student_id", ASCENDING)], unique=True)
+    db.attendance.create_index([("timestamp", ASCENDING)])
+    db.users.create_index([("username", ASCENDING)], unique=True)
+    
+    # Create default admin user if not exists
+    if db.users.count_documents({"username": "admin"}) == 0:
+        db.users.insert_one({
+            "username": "admin",
+            "password": "admin123",
+            "role": "admin"
+        })
+        app.logger.info("Created default admin user")
 
 # Create directories if not exist
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
@@ -116,77 +84,79 @@ init_db()
 
 # Helper functions
 def get_students():
-    conn = get_db_connection()
-    if not conn:
+    db = get_db()
+    if db is None:
         return []
-    cursor = conn.cursor(dictionary=True)
-    cursor.execute('SELECT * FROM students')
-    students = cursor.fetchall()
-    cursor.close()
-    conn.close()
-    return students
+    return list(db.students.find().sort("registered_on", -1))
 
 def get_attendance():
-    conn = get_db_connection()
-    if not conn:
+    db = get_db()
+    if db is None:
         return []
-    cursor = conn.cursor(dictionary=True)
-    cursor.execute('''
-        SELECT a.*, s.name 
-        FROM attendance a
-        JOIN students s ON a.student_id = s.student_id
-        ORDER BY a.timestamp DESC
-        LIMIT 20
-    ''')
-    attendance = cursor.fetchall()
-    cursor.close()
-    conn.close()
-    return attendance
+    
+    # Using MongoDB aggregation to join collections
+    pipeline = [
+        {
+            "$lookup": {
+                "from": "students",
+                "localField": "student_id",
+                "foreignField": "student_id",
+                "as": "student_info"
+            }
+        },
+        {"$unwind": "$student_info"},
+        {"$sort": {"timestamp": -1}},
+        {"$limit": 20},
+        {
+            "$project": {
+                "student_id": 1,
+                "timestamp": 1,
+                "class_name": 1,
+                "confidence": 1,
+                "name": "$student_info.name"
+            }
+        }
+    ]
+    
+    return list(db.attendance.aggregate(pipeline))
 
 def get_attendance_stats():
-    conn = get_db_connection()
-    if not conn:
+    db = get_db()
+    if db is None:
         return {
             'today_count': 0,
             'total_students': 0,
             'week_count': 0,
             'daily_data': []
         }
-        
-    cursor = conn.cursor()
     
     # Today's attendance
-    cursor.execute('''
-        SELECT COUNT(DISTINCT student_id) 
-        FROM attendance 
-        WHERE DATE(timestamp) = CURDATE()
-    ''')
-    today_count = cursor.fetchone()[0] or 0
+    today_start = datetime.datetime.combine(datetime.date.today(), datetime.time.min)
+    today_end = datetime.datetime.combine(datetime.date.today(), datetime.time.max)
+    today_count = db.attendance.count_documents({
+        "timestamp": {"$gte": today_start, "$lte": today_end}
+    })
     
     # Total students
-    cursor.execute('SELECT COUNT(*) FROM students')
-    total_students = cursor.fetchone()[0] or 0
+    total_students = db.students.count_documents({})
     
-    # This week attendance
-    cursor.execute('''
-        SELECT COUNT(DISTINCT student_id) 
-        FROM attendance 
-        WHERE WEEK(timestamp) = WEEK(CURDATE())
-    ''')
-    week_count = cursor.fetchone()[0] or 0
+    # This week attendance (unique students)
+    week_start = datetime.datetime.now() - datetime.timedelta(days=7)
+    week_count = len(db.attendance.distinct("student_id", {
+        "timestamp": {"$gte": week_start}
+    }))
     
-    # Attendance by day
-    cursor.execute('''
-        SELECT DATE(timestamp) as day, COUNT(DISTINCT student_id) as count
-        FROM attendance
-        GROUP BY day
-        ORDER BY day DESC
-        LIMIT 7
-    ''')
-    daily_data = cursor.fetchall()
-    
-    cursor.close()
-    conn.close()
+    # Attendance by day (last 7 days)
+    daily_data = []
+    for i in range(7):
+        day = datetime.date.today() - datetime.timedelta(days=i)
+        day_start = datetime.datetime.combine(day, datetime.time.min)
+        day_end = datetime.datetime.combine(day, datetime.time.max)
+        
+        count = db.attendance.count_documents({
+            "timestamp": {"$gte": day_start, "$lte": day_end}
+        })
+        daily_data.append((day.strftime("%Y-%m-%d"), count))
     
     return {
         'today_count': today_count,
@@ -214,15 +184,11 @@ def login():
         if not username or not password:
             return render_template('login.html', error='Username and password are required')
         
-        conn = get_db_connection()
-        if not conn:
+        db = get_db()
+        if db is None:
             return render_template('login.html', error='Database connection failed')
             
-        cursor = conn.cursor(dictionary=True)
-        cursor.execute('SELECT * FROM users WHERE username = %s', (username,))
-        user = cursor.fetchone()
-        cursor.close()
-        conn.close()
+        user = db.users.find_one({"username": username})
         
         if user and user['password'] == password:
             session['user'] = {
@@ -234,6 +200,40 @@ def login():
             return render_template('login.html', error='Invalid credentials')
     
     return render_template('login.html')
+
+@app.route('/register_user', methods=['GET', 'POST'])
+def register_user():
+    if request.method == 'POST':
+        username = request.form.get('username')
+        password = request.form.get('password')
+        confirm_password = request.form.get('confirm_password')
+        role = request.form.get('role', 'teacher')
+        
+        if not username or not password:
+            return render_template('register_user.html', error='Username and password are required')
+        
+        if password != confirm_password:
+            return render_template('register_user.html', error='Passwords do not match')
+        
+        db = get_db()
+        if db is None:
+            return render_template('register_user.html', error='Database connection failed')
+        
+        # Check if username exists
+        if db.users.find_one({"username": username}):
+            return render_template('register_user.html', error='Username already exists')
+        
+        # Create new user
+        db.users.insert_one({
+            "username": username,
+            "password": password,
+            "role": role
+        })
+        
+        flash('User registered successfully! You can now login.', 'success')
+        return redirect(url_for('login'))
+    
+    return render_template('register_user.html')
 
 @app.route('/logout')
 def logout():
@@ -283,49 +283,49 @@ def register_student():
                 flash('No face detected. Please try again with a clear face image.', 'danger')
                 return render_template('register.html')
             
-            face_encoding = face_recognition.face_encodings(img)[0]
-            encoding_bytes = np.array(face_encoding).tobytes()
+            # Get face encodings
+            face_encodings = face_recognition.face_encodings(img, face_locations)
+            if len(face_encodings) == 0:
+                os.remove(filepath)
+                flash('Could not generate face encoding. Please try again with a different image.', 'danger')
+                return render_template('register.html')
             
-            # Save to database
-            conn = get_db_connection()
-            if not conn:
+            face_encoding = face_encodings[0]
+            encoding_bytes = Binary(np.array(face_encoding).tobytes())
+            
+            # Save to MongoDB
+            db = get_db()
+            if db is None:
                 flash('Database connection failed', 'danger')
                 return render_template('register.html')
                 
-            cursor = conn.cursor()
             try:
-                cursor.execute('''
-                    INSERT INTO students (student_id, name, face_encoding)
-                    VALUES (%s, %s, %s)
-                ''', (student_id, name, encoding_bytes))
-                conn.commit()
+                db.students.insert_one({
+                    "student_id": student_id,
+                    "name": name,
+                    "face_encoding": encoding_bytes,
+                    "registered_on": datetime.datetime.now(),
+                    "image_path": filename
+                })
+                
                 flash(f'Student {name} registered successfully!', 'success')
                 app.logger.info(f"Student {student_id} registered in database")
-                
-                # Redirect to success page or dashboard
                 return redirect(url_for('dashboard'))
-            except mysql.connector.IntegrityError as e:
-                conn.rollback()
-                if "Duplicate entry" in str(e):
-                    flash(f'Student ID {student_id} already exists', 'danger')
-                else:
-                    flash(f'Database error: {str(e)}', 'danger')
-                app.logger.error(f"Database error: {str(e)}")
+                
             except Exception as e:
-                conn.rollback()
                 flash(f'Error saving to database: {str(e)}', 'danger')
                 app.logger.error(f"Database error: {str(e)}")
-            finally:
-                cursor.close()
-                conn.close()
         
         except Exception as e:
             flash(f'Error processing registration: {str(e)}', 'danger')
             app.logger.error(f"Registration error: {str(e)}")
+            # Clean up file if it exists
+            if os.path.exists(filepath):
+                os.remove(filepath)
     
-    # For GET requests or failed POSTs
     return render_template('register.html')
 
+# ... rest of the code remains the same ...
 @app.route('/take_attendance', methods=['GET', 'POST'])
 @login_required
 def take_attendance():
@@ -349,13 +349,11 @@ def take_attendance():
             face_encodings = face_recognition.face_encodings(img, face_locations)
             
             # Get all students from database
-            conn = get_db_connection()
-            if not conn:
+            db = get_db()
+            if not db:
                 return jsonify({'status': 'error', 'message': 'Database connection failed'}), 500
                 
-            cursor = conn.cursor(dictionary=True)
-            cursor.execute('SELECT student_id, name, face_encoding FROM students')
-            students = cursor.fetchall()
+            students = list(db.students.find({}, {"face_encoding": 1, "student_id": 1, "name": 1}))
             
             recognized_students = []
             
@@ -363,9 +361,10 @@ def take_attendance():
             for face_encoding in face_encodings:
                 for student in students:
                     try:
-                        if not student['face_encoding']:
+                        if not student.get('face_encoding'):
                             continue
                             
+                        # Convert Binary back to numpy array
                         db_encoding = np.frombuffer(student['face_encoding'], dtype=np.float64)
                         matches = face_recognition.compare_faces([db_encoding], face_encoding)
                         face_distance = face_recognition.face_distance([db_encoding], face_encoding)[0]
@@ -373,10 +372,13 @@ def take_attendance():
                         
                         if matches[0] and confidence > 70:  # Minimum 70% confidence
                             # Record attendance
-                            cursor.execute('''
-                                INSERT INTO attendance (student_id, class_name, confidence)
-                                VALUES (%s, %s, %s)
-                            ''', (student['student_id'], class_name, confidence))
+                            db.attendance.insert_one({
+                                "student_id": student['student_id'],
+                                "class_name": class_name,
+                                "confidence": confidence,
+                                "timestamp": datetime.datetime.now()
+                            })
+                            
                             recognized_students.append({
                                 'student_id': student['student_id'],
                                 'name': student['name'],
@@ -387,7 +389,6 @@ def take_attendance():
                         app.logger.error(f"Error processing student {student['student_id']}: {str(e)}")
                         continue
             
-            conn.commit()
             return jsonify({
                 'status': 'success',
                 'recognized': recognized_students,
@@ -399,61 +400,88 @@ def take_attendance():
             return jsonify({'status': 'error', 'message': str(e)}), 500
             
         finally:
-            if 'cursor' in locals():
-                cursor.close()
-            if 'conn' in locals():
-                conn.close()
             if os.path.exists(filepath):
                 os.remove(filepath)  # Clean up temp file
     
-    # For GET requests
     return render_template('take_attendance.html')
 
 @app.route('/reports')
 @login_required
 def reports():
     try:
-        conn = get_db_connection()
-        if not conn:
+        db = get_db()
+        if not db:
             flash('Database connection failed', 'danger')
             return render_template('reports.html', 
                                   daily_data=[],
                                   student_data=[],
                                   class_data=[])
-            
-        cursor = conn.cursor(dictionary=True)
         
-        # Daily attendance
-        cursor.execute('''
-            SELECT DATE(timestamp) as date, COUNT(DISTINCT student_id) as count
-            FROM attendance
-            GROUP BY date
-            ORDER BY date DESC
-            LIMIT 30
-        ''')
-        daily_data = cursor.fetchall()
+        # Daily attendance (last 30 days)
+        daily_data = list(db.attendance.aggregate([
+            {
+                "$group": {
+                    "_id": {"$dateToString": { "format": "%Y-%m-%d", "date": "$timestamp" }},
+                    "count": {"$sum": 1}
+                }
+            },
+            {"$sort": {"_id": -1}},
+            {"$limit": 30},
+            {
+                "$project": {
+                    "date": "$_id",
+                    "count": 1,
+                    "_id": 0
+                }
+            }
+        ]))
         
         # Student attendance
-        cursor.execute('''
-            SELECT s.student_id, s.name, COUNT(a.id) as attendance_count
-            FROM students s
-            LEFT JOIN attendance a ON s.student_id = a.student_id
-            GROUP BY s.student_id, s.name
-            ORDER BY attendance_count DESC
-        ''')
-        student_data = cursor.fetchall()
+        student_data = list(db.attendance.aggregate([
+            {
+                "$group": {
+                    "_id": "$student_id",
+                    "attendance_count": {"$sum": 1},
+                    "last_attendance": {"$max": "$timestamp"}
+                }
+            },
+            {
+                "$lookup": {
+                    "from": "students",
+                    "localField": "_id",
+                    "foreignField": "student_id",
+                    "as": "student_info"
+                }
+            },
+            {"$unwind": "$student_info"},
+            {
+                "$project": {
+                    "student_id": "$_id",
+                    "name": "$student_info.name",
+                    "attendance_count": 1,
+                    "last_attendance": 1
+                }
+            },
+            {"$sort": {"attendance_count": -1}}
+        ]))
         
         # Class attendance
-        cursor.execute('''
-            SELECT class_name, COUNT(*) as count
-            FROM attendance
-            GROUP BY class_name
-            ORDER BY count DESC
-        ''')
-        class_data = cursor.fetchall()
-        
-        cursor.close()
-        conn.close()
+        class_data = list(db.attendance.aggregate([
+            {
+                "$group": {
+                    "_id": "$class_name",
+                    "count": {"$sum": 1}
+                }
+            },
+            {
+                "$project": {
+                    "class_name": "$_id",
+                    "count": 1,
+                    "_id": 0
+                }
+            },
+            {"$sort": {"count": -1}}
+        ]))
         
         return render_template('reports.html', 
                               daily_data=daily_data,
@@ -476,30 +504,43 @@ def static_files(filename):
 @login_required
 def export_csv():
     try:
-        conn = get_db_connection()
-        if not conn:
+        db = get_db()
+        if not db:
             flash('Database connection failed', 'danger')
             return redirect(url_for('reports'))
             
-        cursor = conn.cursor(dictionary=True)
-        
         # Get student attendance data
-        cursor.execute('''
-            SELECT s.student_id, s.name, COUNT(a.id) as attendance_count, 
-                   MAX(a.timestamp) as last_attendance
-            FROM students s
-            LEFT JOIN attendance a ON s.student_id = a.student_id
-            GROUP BY s.student_id, s.name
-            ORDER BY s.name
-        ''')
-        data = cursor.fetchall()
-        cursor.close()
-        conn.close()
+        student_data = list(db.attendance.aggregate([
+            {
+                "$group": {
+                    "_id": "$student_id",
+                    "attendance_count": {"$sum": 1},
+                    "last_attendance": {"$max": "$timestamp"}
+                }
+            },
+            {
+                "$lookup": {
+                    "from": "students",
+                    "localField": "_id",
+                    "foreignField": "student_id",
+                    "as": "student_info"
+                }
+            },
+            {"$unwind": "$student_info"},
+            {
+                "$project": {
+                    "student_id": "$_id",
+                    "name": "$student_info.name",
+                    "attendance_count": 1,
+                    "last_attendance": 1
+                }
+            }
+        ]))
         
         # Create CSV content
         csv_content = "Student ID,Name,Attendance Count,Last Attendance\n"
-        for row in data:
-            last_attendance = row['last_attendance'].strftime('%Y-%m-%d') if row['last_attendance'] else 'Never'
+        for row in student_data:
+            last_attendance = row['last_attendance'].strftime('%Y-%m-%d') if 'last_attendance' in row else 'Never'
             csv_content += f"{row['student_id']},{row['name']},{row['attendance_count']},{last_attendance}\n"
         
         # Create response

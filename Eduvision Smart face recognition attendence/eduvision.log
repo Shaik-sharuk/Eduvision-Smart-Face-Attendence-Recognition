@@ -29,3 +29,76 @@
 2025-07-22 20:38:42,651 INFO: Database tables created successfully [in c:\Users\sksha\OneDrive\Desktop\mine\student\app.py:103]
 2025-07-22 21:34:41,831 INFO: EduVision application startup [in c:\Users\sksha\OneDrive\Desktop\mine\student\app.py:27]
 2025-07-22 21:34:42,253 INFO: Database tables created successfully [in c:\Users\sksha\OneDrive\Desktop\mine\student\app.py:102]
+2025-07-28 09:45:12,154 INFO: EduVision application startup [in c:\Users\sksha\OneDrive\Desktop\mine\Eduvision Smart face recognition attendence\app.py:27]
+2025-07-28 09:45:12,286 INFO: Database tables created successfully [in c:\Users\sksha\OneDrive\Desktop\mine\Eduvision Smart face recognition attendence\app.py:102]
+2025-08-04 11:52:18,317 INFO: EduVision application startup [in c:\Users\sksha\OneDrive\Desktop\mine\Eduvision Smart face recognition attendence\app.py:27]
+2025-08-04 11:52:18,504 INFO: Database tables created successfully [in c:\Users\sksha\OneDrive\Desktop\mine\Eduvision Smart face recognition attendence\app.py:102]
+2025-08-08 22:45:38,862 INFO: EduVision application startup [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:28]
+2025-08-08 22:47:58,937 INFO: EduVision application startup [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:28]
+2025-08-08 22:52:58,080 INFO: EduVision application startup [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:28]
+2025-08-08 22:52:58,127 INFO: Created collection: students [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:58]
+2025-08-08 22:52:58,157 INFO: Created collection: attendance [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:58]
+2025-08-08 22:52:58,177 INFO: Created collection: users [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:58]
+2025-08-08 22:52:58,218 INFO: Created default admin user [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:72]
+2025-08-08 22:53:30,476 ERROR: Exception on /register_user [POST] [in C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py:838]
+Traceback (most recent call last):
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py", line 215, in register_user
+    if not db:
+           ^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\pymongo\synchronous\database.py", line 342, in __bool__
+    raise NotImplementedError(
+NotImplementedError: Database objects do not implement truth value testing or bool(). Please compare with None instead: database is not None
+2025-08-08 22:53:51,768 ERROR: Exception on /register_user [POST] [in C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py:838]
+Traceback (most recent call last):
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py", line 215, in register_user
+    if not db:
+           ^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\pymongo\synchronous\database.py", line 342, in __bool__
+    raise NotImplementedError(
+NotImplementedError: Database objects do not implement truth value testing or bool(). Please compare with None instead: database is not None
+2025-08-08 22:55:27,659 ERROR: Exception on /login [POST] [in C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py:838]
+Traceback (most recent call last):
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py", line 184, in login
+    if not db:
+           ^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\pymongo\synchronous\database.py", line 342, in __bool__
+    raise NotImplementedError(
+NotImplementedError: Database objects do not implement truth value testing or bool(). Please compare with None instead: database is not None
+2025-08-08 22:59:24,957 INFO: EduVision application startup [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:28]
+2025-08-08 23:02:30,381 INFO: EduVision application startup [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:28]
