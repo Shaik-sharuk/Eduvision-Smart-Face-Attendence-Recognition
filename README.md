@@ -84,6 +84,6 @@ All the key stats in one place!
 Shaik Sharu
 
 📧 Email: shaiks.sharuk@gmail.com
-🔗 LinkedIn: sharu-shaik-b98659284
-💻 GitHub: Shaik-sharuk
+🔗 LinkedIn: linkedin.com/in/sharu-shaik-b98659284
+💻 GitHub: github.com/Shaik-sharuk
 
