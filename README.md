@@ -73,9 +73,9 @@ All the key stats in one place!
 ## 🛠 Built With
 
 - **Backend**: Python (Flask), Dlib, OpenCV
-- **Frontend**: HTML, CSS (plain), JavaScript
+- **Frontend**: HTML, CSS (plain), JavaScript,BootStrap
 - **Database**: MONGODB
-- **Libraries**: NumPy, Pandas, MySQL Connector
+- **Libraries**: NumPy, Pandas
 
 ---
 
