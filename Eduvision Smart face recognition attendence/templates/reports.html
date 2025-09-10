@@ -1,0 +1,235 @@
+{% extends "base.html" %}
+
+{% block title %}Reports{% endblock %}
+{% block page_title %}Attendance Reports{% endblock %}
+
+{% block content %}
+<!-- Flash Messages -->
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <div class="row">
+            <div class="col-md-12">
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+{% endwith %}
+
+<div class="row">
+    <!-- Daily Attendance Report -->
+    <div class="col-md-6">
+        <div class="card mb-4">
+            <div class="card-header bg-white">
+                <h5 class="card-title mb-0">Daily Attendance (Last 30 Days)</h5>
+            </div>
+            <div class="card-body">
+                {% if daily_data and daily_data|length > 0 %}
+                <canvas id="dailyChart" height="250"></canvas>
+                {% else %}
+                <p class="text-center text-muted my-4">No daily attendance data available.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    
+    <!-- Class Attendance -->
+    <div class="col-md-6">
+        <div class="card mb-4">
+            <div class="card-header bg-white">
+                <h5 class="card-title mb-0">Class Attendance Distribution</h5>
+            </div>
+            <div class="card-body">
+                {% if class_data and class_data|length > 0 %}
+                <canvas id="classChart" height="250"></canvas>
+                {% else %}
+                <p class="text-center text-muted my-4">No class attendance data available.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Student Attendance Report -->
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                <h5 class="card-title mb-0">Student Attendance Records</h5>
+                <button class="btn btn-sm btn-outline-primary" id="export-csv">
+                    <i class="bi bi-download me-1"></i> Export CSV
+                </button>
+            </div>
+            <div class="card-body">
+                {% if student_data and student_data|length > 0 %}
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Student ID</th>
+                                <th>Name</th>
+                                <th>Total Attendance</th>
+                                <th>Attendance Rate</th>
+                                <th>Last Attendance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for student in student_data %}
+                            <tr>
+                                <td>{{ student.student_id }}</td>
+                                <td>{{ student.name }}</td>
+                                <td>{{ student.attendance_count }}</td>
+                                <td>
+                                    <div class="progress" style="height: 20px;">
+                                        {% set total_days = (daily_data|length if daily_data else 30) %}
+                                        {% set percentage = (student.attendance_count / total_days) * 100 if total_days > 0 else 0 %}
+                                        <div class="progress-bar" 
+                                            role="progressbar" 
+                                            style="width: {{ percentage }}%;"
+                                            aria-valuenow="{{ percentage }}" 
+                                            aria-valuemin="0" 
+                                            aria-valuemax="100">
+                                            {{ percentage|round(1) }}%
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    {% if student.last_attendance %}
+                                        {{ student.last_attendance.strftime('%Y-%m-%d') }}
+                                    {% else %}
+                                        Never
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% else %}
+                <p class="text-center text-muted my-4">No student attendance data available.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block extra_js %}
+<script>
+    // Daily Attendance Chart
+    {% if daily_data and daily_data|length > 0 %}
+    const dailyCtx = document.getElementById('dailyChart').getContext('2d');
+    const dailyChartData = [
+        {% for day in daily_data %}
+        { date: "{{ day.date }}", count: {{ day.count }} },
+        {% endfor %}
+    ].reverse(); // Reverse to show chronological order
+    
+    new Chart(dailyCtx, {
+        type: 'bar',
+        data: {
+            labels: dailyChartData.map(d => d.date),
+            datasets: [{
+                label: 'Attendance Count',
+                data: dailyChartData.map(d => d.count),
+                backgroundColor: '#3498db',
+                borderColor: '#2980b9',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Students'
+                    },
+                    ticks: {
+                        precision: 0
+                    }
+                },
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Date'
+                    }
+                }
+            }
+        }
+    });
+    {% endif %}
+    
+    // Class Attendance Chart
+    {% if class_data and class_data|length > 0 %}
+    const classCtx = document.getElementById('classChart').getContext('2d');
+    const classChartData = [
+        {% for class in class_data %}
+        { className: "{{ class.class_name }}", count: {{ class.count }} },
+        {% endfor %}
+    ];
+    
+    new Chart(classCtx, {
+        type: 'doughnut',
+        data: {
+            labels: classChartData.map(c => c.className),
+            datasets: [{
+                label: 'Attendance Count',
+                data: classChartData.map(c => c.count),
+                backgroundColor: [
+                    '#3498db', '#2ecc71', '#9b59b6', '#e74c3c', '#f39c12',
+                    '#1abc9c', '#d35400', '#c0392b', '#16a085', '#8e44ad'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'right'
+                }
+            }
+        }
+    });
+    {% endif %}
+    
+    // Export CSV with better error handling
+    document.getElementById('export-csv').addEventListener('click', async () => {
+        try {
+            const response = await fetch('/export-csv');
+            
+            if (response.ok) {
+                const blob = await response.blob();
+                
+                // Check if the response is actually CSV
+                if (blob.type === 'text/csv' || blob.size > 0) {
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'attendance_report.csv';
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    window.URL.revokeObjectURL(url);
+                } else {
+                    // If not CSV, read as text to see the error
+                    const text = await response.text();
+                    alert('Failed to generate CSV: ' + text);
+                }
+            } else {
+                const errorText = await response.text();
+                alert('Failed to generate CSV report: ' + errorText);
+            }
+        } catch (error) {
+            console.error('Export error:', error);
+            alert('Error generating report. Please check your connection and try again.');
+        }
+    });
+</script>
+{% endblock %}
+{% endblock %}

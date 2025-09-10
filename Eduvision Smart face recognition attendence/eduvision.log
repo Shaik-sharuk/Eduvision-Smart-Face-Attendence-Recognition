@@ -1,0 +1,603 @@
+2025-07-21 23:21:35,502 INFO: EduVision application startup [in c:\Users\sksha\OneDrive\Desktop\mine\student\app.py:28]
+2025-07-21 23:21:36,015 INFO: Database tables created successfully [in c:\Users\sksha\OneDrive\Desktop\mine\student\app.py:103]
+2025-07-21 23:21:37,648 INFO: EduVision application startup [in c:\Users\sksha\OneDrive\Desktop\mine\student\app.py:28]
+2025-07-21 23:21:37,994 INFO: Database tables created successfully [in c:\Users\sksha\OneDrive\Desktop\mine\student\app.py:103]
+2025-07-21 23:22:23,598 INFO: Registration attempt for king (12345) [in c:\Users\sksha\OneDrive\Desktop\mine\student\app.py:265]
+2025-07-21 23:22:23,609 INFO: Image saved: static/uploads\12345_20250721232223.jpg [in c:\Users\sksha\OneDrive\Desktop\mine\student\app.py:276]
+2025-07-21 23:24:46,834 INFO: Registration attempt for king (1345) [in c:\Users\sksha\OneDrive\Desktop\mine\student\app.py:265]
+2025-07-21 23:26:00,368 INFO: Registration attempt for king (1345) [in c:\Users\sksha\OneDrive\Desktop\mine\student\app.py:265]
+2025-07-21 23:26:00,368 INFO: Image saved: static/uploads\1345_20250721232600.jpg [in c:\Users\sksha\OneDrive\Desktop\mine\student\app.py:276]
+2025-07-21 23:26:02,709 INFO: Student 1345 registered in database [in c:\Users\sksha\OneDrive\Desktop\mine\student\app.py:304]
+2025-07-21 23:30:34,950 INFO: Registration attempt for rohith (1003) [in c:\Users\sksha\OneDrive\Desktop\mine\student\app.py:265]
+2025-07-21 23:30:34,962 INFO: Image saved: static/uploads\1003_20250721233034.jpg [in c:\Users\sksha\OneDrive\Desktop\mine\student\app.py:276]
+2025-07-21 23:30:41,021 INFO: Student 1003 registered in database [in c:\Users\sksha\OneDrive\Desktop\mine\student\app.py:304]
+2025-07-21 23:32:11,989 INFO: EduVision application startup [in c:\Users\sksha\OneDrive\Desktop\mine\student\app.py:28]
+2025-07-21 23:32:12,464 INFO: Database tables created successfully [in c:\Users\sksha\OneDrive\Desktop\mine\student\app.py:103]
+2025-07-21 23:32:14,123 INFO: EduVision application startup [in c:\Users\sksha\OneDrive\Desktop\mine\student\app.py:28]
+2025-07-21 23:32:14,437 INFO: Database tables created successfully [in c:\Users\sksha\OneDrive\Desktop\mine\student\app.py:103]
+2025-07-21 23:34:08,532 INFO: EduVision application startup [in c:\Users\sksha\OneDrive\Desktop\mine\student\app.py:28]
+2025-07-21 23:34:08,975 INFO: Database tables created successfully [in c:\Users\sksha\OneDrive\Desktop\mine\student\app.py:103]
+2025-07-21 23:34:10,583 INFO: EduVision application startup [in c:\Users\sksha\OneDrive\Desktop\mine\student\app.py:28]
+2025-07-21 23:34:10,933 INFO: Database tables created successfully [in c:\Users\sksha\OneDrive\Desktop\mine\student\app.py:103]
+2025-07-22 20:37:43,476 INFO: EduVision application startup [in c:\Users\sksha\OneDrive\Desktop\mine\student\app.py:28]
+2025-07-22 20:37:44,108 INFO: Database tables created successfully [in c:\Users\sksha\OneDrive\Desktop\mine\student\app.py:103]
+2025-07-22 20:37:46,087 INFO: EduVision application startup [in c:\Users\sksha\OneDrive\Desktop\mine\student\app.py:28]
+2025-07-22 20:37:46,420 INFO: Database tables created successfully [in c:\Users\sksha\OneDrive\Desktop\mine\student\app.py:103]
+2025-07-22 20:38:37,233 INFO: EduVision application startup [in c:\Users\sksha\OneDrive\Desktop\mine\student\app.py:28]
+2025-07-22 20:38:37,595 INFO: Database tables created successfully [in c:\Users\sksha\OneDrive\Desktop\mine\student\app.py:103]
+2025-07-22 20:38:42,346 INFO: EduVision application startup [in c:\Users\sksha\OneDrive\Desktop\mine\student\app.py:28]
+2025-07-22 20:38:42,651 INFO: Database tables created successfully [in c:\Users\sksha\OneDrive\Desktop\mine\student\app.py:103]
+2025-07-22 21:34:41,831 INFO: EduVision application startup [in c:\Users\sksha\OneDrive\Desktop\mine\student\app.py:27]
+2025-07-22 21:34:42,253 INFO: Database tables created successfully [in c:\Users\sksha\OneDrive\Desktop\mine\student\app.py:102]
+2025-07-28 09:45:12,154 INFO: EduVision application startup [in c:\Users\sksha\OneDrive\Desktop\mine\Eduvision Smart face recognition attendence\app.py:27]
+2025-07-28 09:45:12,286 INFO: Database tables created successfully [in c:\Users\sksha\OneDrive\Desktop\mine\Eduvision Smart face recognition attendence\app.py:102]
+2025-08-04 11:52:18,317 INFO: EduVision application startup [in c:\Users\sksha\OneDrive\Desktop\mine\Eduvision Smart face recognition attendence\app.py:27]
+2025-08-04 11:52:18,504 INFO: Database tables created successfully [in c:\Users\sksha\OneDrive\Desktop\mine\Eduvision Smart face recognition attendence\app.py:102]
+2025-08-08 22:45:38,862 INFO: EduVision application startup [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:28]
+2025-08-08 22:47:58,937 INFO: EduVision application startup [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:28]
+2025-08-08 22:52:58,080 INFO: EduVision application startup [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:28]
+2025-08-08 22:52:58,127 INFO: Created collection: students [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:58]
+2025-08-08 22:52:58,157 INFO: Created collection: attendance [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:58]
+2025-08-08 22:52:58,177 INFO: Created collection: users [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:58]
+2025-08-08 22:52:58,218 INFO: Created default admin user [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:72]
+2025-08-08 22:53:30,476 ERROR: Exception on /register_user [POST] [in C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py:838]
+Traceback (most recent call last):
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py", line 215, in register_user
+    if not db:
+           ^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\pymongo\synchronous\database.py", line 342, in __bool__
+    raise NotImplementedError(
+NotImplementedError: Database objects do not implement truth value testing or bool(). Please compare with None instead: database is not None
+2025-08-08 22:53:51,768 ERROR: Exception on /register_user [POST] [in C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py:838]
+Traceback (most recent call last):
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py", line 215, in register_user
+    if not db:
+           ^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\pymongo\synchronous\database.py", line 342, in __bool__
+    raise NotImplementedError(
+NotImplementedError: Database objects do not implement truth value testing or bool(). Please compare with None instead: database is not None
+2025-08-08 22:55:27,659 ERROR: Exception on /login [POST] [in C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py:838]
+Traceback (most recent call last):
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py", line 184, in login
+    if not db:
+           ^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\pymongo\synchronous\database.py", line 342, in __bool__
+    raise NotImplementedError(
+NotImplementedError: Database objects do not implement truth value testing or bool(). Please compare with None instead: database is not None
+2025-08-08 22:59:24,957 INFO: EduVision application startup [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:28]
+2025-08-08 23:02:30,381 INFO: EduVision application startup [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:28]
+2025-08-12 19:26:44,838 INFO: EduVision application startup [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:28]
+2025-08-12 19:29:26,154 ERROR: Attendance processing error: Database objects do not implement truth value testing or bool(). Please compare with None instead: database is not None [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:399]
+2025-08-12 19:29:34,682 ERROR: Attendance processing error: Database objects do not implement truth value testing or bool(). Please compare with None instead: database is not None [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:399]
+2025-08-12 19:29:46,697 ERROR: Error in reports route: Database objects do not implement truth value testing or bool(). Please compare with None instead: database is not None [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:492]
+2025-08-12 19:30:05,646 ERROR: Attendance processing error: Database objects do not implement truth value testing or bool(). Please compare with None instead: database is not None [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:399]
+2025-08-12 19:30:18,987 ERROR: Error in reports route: Database objects do not implement truth value testing or bool(). Please compare with None instead: database is not None [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:492]
+2025-08-23 13:40:04,678 INFO: EduVision application startup [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:28]
+2025-08-23 13:41:54,482 INFO: Registration attempt for Sharuk (1004) [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:264]
+2025-08-23 13:41:54,487 INFO: Image saved: static/uploads\1004_20250823134154.jpg [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:275]
+2025-08-23 13:41:57,395 INFO: Student 1004 registered in database [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:312]
+2025-08-23 13:42:11,173 ERROR: Attendance processing error: Database objects do not implement truth value testing or bool(). Please compare with None instead: database is not None [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:399]
+2025-08-23 13:42:17,729 ERROR: Attendance processing error: Database objects do not implement truth value testing or bool(). Please compare with None instead: database is not None [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:399]
+2025-08-23 13:54:19,513 INFO: EduVision application startup [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:28]
+2025-08-23 13:56:13,444 INFO: Registration attempt for virat (987654) [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:264]
+2025-08-23 13:56:13,449 INFO: Image saved: static/uploads\987654_20250823135613.jpg [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:275]
+2025-08-23 13:56:14,736 INFO: Student 987654 registered in database [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:312]
+2025-08-23 13:58:09,135 ERROR: Error in reports route: Database objects do not implement truth value testing or bool(). Please compare with None instead: database is not None [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:495]
+2025-08-23 13:58:17,184 ERROR: Error in reports route: Database objects do not implement truth value testing or bool(). Please compare with None instead: database is not None [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:495]
+2025-08-23 13:58:19,492 ERROR: Error exporting CSV: Database objects do not implement truth value testing or bool(). Please compare with None instead: database is not None [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:556]
+2025-08-23 13:58:19,537 ERROR: Error in reports route: Database objects do not implement truth value testing or bool(). Please compare with None instead: database is not None [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:495]
+2025-08-23 14:13:37,542 INFO: EduVision application startup [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:28]
+2025-08-23 14:13:44,255 ERROR: Error in reports route: Database objects do not implement truth value testing or bool(). Please compare with None instead: database is not None [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:495]
+2025-08-23 14:13:45,798 ERROR: Error in reports route: Database objects do not implement truth value testing or bool(). Please compare with None instead: database is not None [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:495]
+2025-08-23 14:13:46,029 ERROR: Error in reports route: Database objects do not implement truth value testing or bool(). Please compare with None instead: database is not None [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:495]
+2025-08-23 14:13:53,147 ERROR: Error in reports route: Database objects do not implement truth value testing or bool(). Please compare with None instead: database is not None [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:495]
+2025-08-23 14:14:27,932 ERROR: Error in reports route: Database objects do not implement truth value testing or bool(). Please compare with None instead: database is not None [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:495]
+2025-08-23 14:14:45,845 ERROR: Error in reports route: Database objects do not implement truth value testing or bool(). Please compare with None instead: database is not None [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:495]
+2025-08-23 14:15:13,100 ERROR: Error in reports route: Database objects do not implement truth value testing or bool(). Please compare with None instead: database is not None [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:495]
+2025-08-23 14:15:22,480 ERROR: Error in reports route: Database objects do not implement truth value testing or bool(). Please compare with None instead: database is not None [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:495]
+2025-08-23 14:19:43,413 INFO: EduVision application startup [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:28]
+2025-08-23 14:20:02,388 INFO: Retrieved 1 daily records, 2 student records, 1 class records [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:510]
+2025-08-23 14:21:16,373 INFO: Retrieved 1 daily records, 2 student records, 2 class records [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:510]
+2025-08-23 14:23:06,369 INFO: Retrieved 1 daily records, 2 student records, 3 class records [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:510]
+2025-08-25 23:01:02,850 INFO: EduVision application startup [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:28]
+2025-08-25 23:07:34,863 ERROR: Database connection error: No servers found yet, Timeout: 30s, Topology Description: <TopologyDescription id: 68ac9eb0d5f4f182b2e45e81, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None>]> [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:48]
+2025-08-25 23:07:34,864 ERROR: Database connection error: No servers found yet, Timeout: 30s, Topology Description: <TopologyDescription id: 68ac9eafd5f4f182b2e45e7f, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None>]> [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:48]
+2025-08-25 23:22:52,543 INFO: EduVision application startup [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:35]
+2025-08-25 23:26:26,228 INFO: Retrieved 2 daily records, 2 student records, 3 class records [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:545]
+2025-08-25 23:34:18,881 INFO: EduVision application startup [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:35]
+2025-08-25 23:43:14,807 INFO: EduVision application startup [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:35]
+2025-08-25 23:43:25,909 ERROR: Exception on /register_student [GET] [in C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py:838]
+Traceback (most recent call last):
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py", line 191, in wrapper
+    return route_function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py", line 352, in register_student
+    return render_template('register_student.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\jinja2\environment.py", line 1084, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\jinja2\environment.py", line 1013, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\jinja2\environment.py", line 972, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: register_student.html
+2025-08-25 23:43:30,163 ERROR: Exception on /register_student [GET] [in C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py:838]
+Traceback (most recent call last):
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py", line 191, in wrapper
+    return route_function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py", line 352, in register_student
+    return render_template('register_student.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\jinja2\environment.py", line 1084, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\jinja2\environment.py", line 1013, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\jinja2\environment.py", line 972, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: register_student.html
+2025-08-25 23:44:15,120 ERROR: Exception on /register_student [GET] [in C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py:838]
+Traceback (most recent call last):
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py", line 191, in wrapper
+    return route_function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py", line 352, in register_student
+    return render_template('register_student.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\jinja2\environment.py", line 1084, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\jinja2\environment.py", line 1013, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\jinja2\environment.py", line 972, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: register_student.html
+2025-08-25 23:45:42,708 INFO: EduVision application startup [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:35]
+2025-08-25 23:45:50,013 ERROR: Exception on /register_student [GET] [in C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py:838]
+Traceback (most recent call last):
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py", line 191, in wrapper
+    return route_function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py", line 345, in register_student
+    return render_template('register_student.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\jinja2\environment.py", line 1084, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\jinja2\environment.py", line 1013, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\jinja2\environment.py", line 972, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: register_student.html
+2025-08-25 23:45:51,862 ERROR: Exception on /register_student [GET] [in C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py:838]
+Traceback (most recent call last):
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py", line 191, in wrapper
+    return route_function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py", line 345, in register_student
+    return render_template('register_student.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\jinja2\environment.py", line 1084, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\jinja2\environment.py", line 1013, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\jinja2\environment.py", line 972, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: register_student.html
+2025-08-25 23:45:52,493 ERROR: Exception on /register_student [GET] [in C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py:838]
+Traceback (most recent call last):
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py", line 191, in wrapper
+    return route_function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py", line 345, in register_student
+    return render_template('register_student.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\jinja2\environment.py", line 1084, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\jinja2\environment.py", line 1013, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\jinja2\environment.py", line 972, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: register_student.html
+2025-08-25 23:48:12,287 ERROR: Exception on /register_student [GET] [in C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py:838]
+Traceback (most recent call last):
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py", line 191, in wrapper
+    return route_function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py", line 345, in register_student
+    return render_template('register_student.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\jinja2\environment.py", line 1084, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\jinja2\environment.py", line 1013, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\jinja2\environment.py", line 972, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: register_student.html
+2025-08-25 23:48:14,443 ERROR: Exception on /register_student [GET] [in C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py:838]
+Traceback (most recent call last):
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py", line 191, in wrapper
+    return route_function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py", line 345, in register_student
+    return render_template('register_student.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\jinja2\environment.py", line 1084, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\jinja2\environment.py", line 1013, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\jinja2\environment.py", line 972, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: register_student.html
+2025-08-25 23:50:15,633 ERROR: Exception on /register_student [GET] [in C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py:838]
+Traceback (most recent call last):
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py", line 191, in wrapper
+    return route_function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py", line 345, in register_student
+    return render_template('register_student.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\jinja2\environment.py", line 1084, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\jinja2\environment.py", line 1013, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\jinja2\environment.py", line 972, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: register_student.html
+2025-08-25 23:50:20,178 ERROR: Exception on /register_student [GET] [in C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py:838]
+Traceback (most recent call last):
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py", line 191, in wrapper
+    return route_function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py", line 345, in register_student
+    return render_template('register_student.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\jinja2\environment.py", line 1084, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\jinja2\environment.py", line 1013, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\jinja2\environment.py", line 972, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: register_student.html
+2025-08-25 23:51:12,993 ERROR: Exception on /register_student [GET] [in C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py:838]
+Traceback (most recent call last):
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py", line 191, in wrapper
+    return route_function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py", line 345, in register_student
+    return render_template('register_student.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\jinja2\environment.py", line 1084, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\jinja2\environment.py", line 1013, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\jinja2\environment.py", line 972, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sksha\anaconda3\Lib\site-packages\flask\templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: register_student.html
+2025-08-25 23:52:19,796 INFO: EduVision application startup [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:35]
+2025-08-25 23:55:25,625 INFO: EduVision application startup [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:35]
+2025-08-25 23:55:56,426 INFO: Retrieved 2 daily records, 2 student records, 5 class records [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:555]
+2025-09-10 22:27:46,514 INFO: EduVision application startup [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:35]
+2025-09-10 22:28:51,588 INFO: Retrieved 3 daily records, 2 student records, 5 class records [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:555]
+2025-09-10 22:30:40,416 INFO: EduVision application startup [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:35]
+2025-09-10 22:30:49,217 INFO: Retrieved 3 daily records, 2 student records, 5 class records [in c:\Users\sksha\OneDrive\Desktop\python projects\Eduvision Smart face recognition attendence\app.py:555]

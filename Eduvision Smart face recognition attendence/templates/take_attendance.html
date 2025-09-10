@@ -1,0 +1,204 @@
+{% extends "base.html" %}
+
+{% block title %}Take Attendance{% endblock %}
+{% block page_title %}Take Attendance{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h3><i class="bi bi-camera me-2"></i> Take Attendance</h3>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card mb-4">
+            <div class="card-header bg-white">
+                <h5 class="card-title mb-0">Capture Attendance</h5>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label for="classSelect" class="form-label">Class</label>
+                    <select class="form-select" id="classSelect">
+                        <option value="Math">Mathematics</option>
+                        <option value="Science">Science</option>
+                        <option value="English">English</option>
+                        <option value="History">History</option>
+                        <option value="Computer">Computer Science</option>
+                    </select>
+                </div>
+                
+                <div id="camera-container" class="mb-3">
+                    <div class="ratio ratio-16x9 border rounded bg-light mb-2 position-relative">
+                        <video id="webcam" autoplay playsinline class="w-100 h-100"></video>
+                        <canvas id="canvas" class="d-none"></canvas>
+                    </div>
+                    <button id="capture-btn" class="btn btn-primary w-100">
+                        <i class="bi bi-camera me-2"></i> Capture Attendance
+                    </button>
+                </div>
+                
+                <div id="status-container" class="alert alert-info d-none">
+                    <div class="d-flex align-items-center">
+                        <div class="spinner-border spinner-border-sm me-2" role="status"></div>
+                        <span id="status-message">Processing...</span>
+                    </div>
+                </div>
+                
+                <div id="results-container" class="d-none">
+                    <div class="alert alert-success">
+                        <h5>Attendance Results</h5>
+                        <p>Found <span id="students-count">0</span> students</p>
+                    </div>
+                    <ul id="students-list" class="list-group mb-3"></ul>
+                    <button id="retry-btn" class="btn btn-secondary">
+                        <i class="bi bi-arrow-repeat me-2"></i> Try Again
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header bg-white">
+                <h5 class="card-title mb-0">Instructions</h5>
+            </div>
+            <div class="card-body">
+                <ol>
+                    <li>Position the camera to capture students' faces</li>
+                    <li>Ensure good lighting conditions</li>
+                    <li>Students should face the camera directly</li>
+                    <li>Click "Capture Attendance" button</li>
+                    <li>System will recognize registered students</li>
+                    <li>Review results and retry if needed</li>
+                </ol>
+                <div class="alert alert-warning mt-3">
+                    <i class="bi bi-exclamation-circle me-2"></i>
+                    Only registered students will be recognized
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block extra_js %}
+<script>
+    // Webcam setup
+    const video = document.getElementById('webcam');
+    const canvas = document.getElementById('canvas');
+    const captureBtn = document.getElementById('capture-btn');
+    const retryBtn = document.getElementById('retry-btn');
+    const resultsContainer = document.getElementById('results-container');
+    const statusContainer = document.getElementById('status-container');
+    const statusMessage = document.getElementById('status-message');
+    const cameraContainer = document.getElementById('camera-container');
+    const studentsList = document.getElementById('students-list');
+    const studentsCount = document.getElementById('students-count');
+    
+    let stream = null;
+    
+    // Start webcam
+    async function startWebcam() {
+        try {
+            // Use lower resolution for better performance
+            stream = await navigator.mediaDevices.getUserMedia({ 
+                video: { 
+                    width: { ideal: 640 },
+                    height: { ideal: 480 }
+                } 
+            });
+            video.srcObject = stream;
+        } catch (err) {
+            console.error("Error accessing webcam:", err);
+            alert("Could not access webcam. Please ensure you've granted camera permissions.");
+        }
+    }
+    
+    // Capture image and send to server
+    async function captureAndProcess() {
+        // Show processing status
+        statusMessage.textContent = "Processing image...";
+        statusContainer.classList.remove('d-none');
+        captureBtn.disabled = true;
+        
+        // Capture frame
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+        
+        // Convert to blob
+        canvas.toBlob(async (blob) => {
+            try {
+                // Prepare form data
+                const formData = new FormData();
+                formData.append('image', blob, 'attendance.jpg');
+                formData.append('class_name', document.getElementById('classSelect').value);
+                
+                // Send to server
+                const response = await fetch('/take_attendance', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const result = await response.json();
+                
+                if (result.status === 'success') {
+                    // Display results
+                    studentsList.innerHTML = '';
+                    
+                    if (result.recognized.length > 0) {
+                        statusMessage.textContent = `Attendance captured for ${result.count} students`;
+                        
+                        result.recognized.forEach(student => {
+                            const li = document.createElement('li');
+                            li.className = 'list-group-item d-flex justify-content-between align-items-center';
+                            li.innerHTML = `
+                                <div>
+                                    <strong>${student.name}</strong>
+                                    <div class="text-muted">ID: ${student.student_id}</div>
+                                </div>
+                                <span class="badge bg-primary rounded-pill">${student.confidence}</span>
+                            `;
+                            studentsList.appendChild(li);
+                        });
+                        
+                        studentsCount.textContent = result.count;
+                        resultsContainer.classList.remove('d-none');
+                    } else {
+                        statusMessage.textContent = "No students recognized. Please try again.";
+                    }
+                } else {
+                    statusMessage.textContent = 'Error: ' + result.message;
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                statusMessage.textContent = 'Failed to process attendance';
+            } finally {
+                // Hide status after a delay
+                setTimeout(() => {
+                    statusContainer.classList.add('d-none');
+                    captureBtn.disabled = false;
+                }, 3000);
+            }
+        }, 'image/jpeg', 0.8); // Medium quality for faster processing
+    }
+    
+    // Manual capture
+    captureBtn.addEventListener('click', captureAndProcess);
+    
+    // Retry button
+    retryBtn.addEventListener('click', () => {
+        resultsContainer.classList.add('d-none');
+    });
+    
+    // Initialize
+    startWebcam();
+</script>
+
+<style>
+    #status-container {
+        transition: opacity 0.3s ease;
+    }
+</style>
+{% endblock %}
+{% endblock %}
